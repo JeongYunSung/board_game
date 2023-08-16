@@ -1,4 +1,4 @@
 plugins {
-    id("jys.library-convention")
+    `java-library`
     id("jys.spring-convention")
 }

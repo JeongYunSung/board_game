@@ -10,5 +10,5 @@ import org.junit.jupiter.params.provider.ArgumentsSource
 annotation class BoardTest(
     val value: Array<String> = [],
     val size: Int = 4,
-    val delimiter: String = ",",
+    val delimiter: String = ","
 )

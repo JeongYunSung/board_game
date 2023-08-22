@@ -16,7 +16,7 @@ sealed interface Stone {
         override fun toString(): String = "B"
     }
 
-    data object White: Stone {
+    data object White : Stone {
         override fun isStone(): Boolean = true
 
         override fun toString(): String = "W"
@@ -25,7 +25,7 @@ sealed interface Stone {
     companion object {
 
         fun from(value: String): Stone {
-            return when(value.lowercase()) {
+            return when (value.lowercase()) {
                 "empty" -> Empty
                 "black" -> Black
                 "white" -> White
@@ -33,5 +33,4 @@ sealed interface Stone {
             }
         }
     }
-
 }

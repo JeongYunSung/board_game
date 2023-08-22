@@ -4,7 +4,7 @@ import com.yunseong.model.position.Scala
 import com.yunseong.model.store.Stone
 
 data class Board(
-    private val size: Int,
+    private val size: Int
 ) {
     private val stones: MutableList<Stone> = MutableList(size * size) { Stone.Empty }
 

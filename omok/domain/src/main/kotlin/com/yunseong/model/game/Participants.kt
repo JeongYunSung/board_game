@@ -4,5 +4,5 @@ import com.yunseong.model.player.Player
 
 data class Participants(
     val black: Player,
-    val white: Player,
+    val white: Player
 )

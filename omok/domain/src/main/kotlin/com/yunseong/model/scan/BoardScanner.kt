@@ -6,10 +6,11 @@ import com.yunseong.model.position.Scala
 import com.yunseong.model.store.Stone
 
 class BoardScanner(
-    private val board: Board
+    private val board: Board,
+    private val scanSize: Int = 5
 ) {
 
-    fun scan(stone: Stone, source: Scala): Map<Direction, List<FootPrint>> {
+    fun scan(stone: Stone, source: Scala): ScanContainer {
         val scan = hashMapOf<Direction, MutableList<FootPrint>>()
 
         for (d in Direction.entries) {
@@ -20,7 +21,7 @@ class BoardScanner(
 
             var index = -1
 
-            for (i in 0..5) {
+            for (i in 0..scanSize) {
                 val tempScala = tempVector.toScala()
 
                 if (tempScala.x >= board.width || tempScala.y >= board.height || tempScala.x < 0 || tempScala.y < 0) {
@@ -54,6 +55,6 @@ class BoardScanner(
             scan[d] = history
         }
 
-        return scan
+        return ScanContainer(scan)
     }
 }

@@ -1,7 +1,7 @@
 package com.yunseong.model.board
 
 import com.yunseong.model.position.Scala
-import com.yunseong.model.store.Stone
+import com.yunseong.model.stone.Stone
 
 data class Board(
     private val size: Int
@@ -45,13 +45,15 @@ data class Board(
 
     fun printBoard() {
         for (y in 0 until size) {
-            println("---------------------------------")
+            print("-")
+            println("-".repeat(size * 4))
             for (x in 0 until size) {
                 print("| ${stones[(y * size) + x]} ")
             }
             println("|")
         }
-        println("---------------------------------")
+        print("-")
+        println("-".repeat(size * 4))
     }
 
     fun clear() {

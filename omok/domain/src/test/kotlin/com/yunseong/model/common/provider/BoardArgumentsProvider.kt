@@ -2,7 +2,7 @@ package com.yunseong.model.common.provider
 
 import com.yunseong.model.board.Board
 import com.yunseong.model.position.Scala
-import com.yunseong.model.store.Stone
+import com.yunseong.model.stone.Stone
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider

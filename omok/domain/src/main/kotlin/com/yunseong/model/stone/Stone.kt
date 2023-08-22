@@ -1,4 +1,4 @@
-package com.yunseong.model.store
+package com.yunseong.model.stone
 
 sealed interface Stone {
 

@@ -4,7 +4,7 @@ import com.yunseong.model.board.Board
 import com.yunseong.model.board.Move
 import com.yunseong.model.common.provider.BoardTest
 import com.yunseong.model.position.Scala
-import com.yunseong.model.store.Stone
+import com.yunseong.model.stone.Stone
 import org.assertj.core.api.Assertions.assertThat
 
 class BoardCorrectTest {

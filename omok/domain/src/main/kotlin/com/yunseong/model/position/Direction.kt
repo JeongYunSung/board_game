@@ -24,7 +24,7 @@ enum class Direction(val x: Int, val y: Int) {
         val line = listOf(
             E to W,
             N to S,
-            SE to NW, 
+            SE to NW,
             SW to NE
         )
     }

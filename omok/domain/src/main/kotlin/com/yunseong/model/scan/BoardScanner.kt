@@ -3,7 +3,7 @@ package com.yunseong.model.scan
 import com.yunseong.model.board.Board
 import com.yunseong.model.position.Direction
 import com.yunseong.model.position.Scala
-import com.yunseong.model.store.Stone
+import com.yunseong.model.stone.Stone
 
 class BoardScanner(
     private val board: Board,
@@ -11,11 +11,11 @@ class BoardScanner(
 ) {
 
     fun scan(stone: Stone, source: Scala): ScanContainer {
-        val scan = hashMapOf<Direction, MutableList<FootPrint>>()
+        val scan = hashMapOf<Direction, Road>()
 
         for (d in Direction.entries) {
             val dVec = d.toVector()
-            val history = mutableListOf<FootPrint>()
+            val history = Road()
 
             var tempVector = dVec.fromScala(source)
 

@@ -2,29 +2,7 @@ package com.yunseong.model.scan
 
 class Road(
     private val footPrints: MutableList<FootPrint> = mutableListOf()
-) : Iterator<FootPrint> {
-    private var currentCount = 0
-    private var currentIndex = 0
-    private var currentNode: FootPrint? = null
-
-    override fun next(): FootPrint {
-        check(currentNode != null || hasNext()) {
-            "next() should be called after hasNext()"
-        }
-
-        if (currentCount >= currentNode!!.count) {
-            currentCount = 0
-            currentNode = footPrints[currentIndex++]
-        }
-        currentCount++
-
-        return currentNode!!
-    }
-
-    override fun hasNext(): Boolean {
-        return currentIndex < footPrints.size
-    }
-
+) : Iterable<FootPrint> {
     fun size(): Int {
         return footPrints.size
     }
@@ -47,5 +25,27 @@ class Road(
 
     operator fun set(index: Int, footPrint: FootPrint) {
         footPrints[index] = footPrint
+    }
+
+    override fun iterator(): Iterator<FootPrint> {
+        return object : Iterator<FootPrint> {
+            private var currentCount = 0
+            private var currentIndex = 0
+            private var currentNode: FootPrint = footPrints[currentIndex++]
+
+            override fun hasNext(): Boolean {
+                return currentIndex < footPrints.size
+            }
+
+            override fun next(): FootPrint {
+                if (currentCount >= currentNode!!.count) {
+                    currentCount = 0
+                    currentNode = footPrints[currentIndex++]
+                }
+                currentCount++
+
+                return currentNode!!
+            }
+        }
     }
 }

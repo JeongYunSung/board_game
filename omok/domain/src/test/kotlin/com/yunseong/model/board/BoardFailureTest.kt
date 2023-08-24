@@ -1,4 +1,4 @@
-package com.yunseong.model.board.type
+package com.yunseong.model.board
 
 import com.yunseong.model.board.Board
 import com.yunseong.model.board.Move

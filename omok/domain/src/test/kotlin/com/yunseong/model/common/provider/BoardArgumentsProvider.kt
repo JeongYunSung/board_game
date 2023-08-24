@@ -20,12 +20,6 @@ class BoardArgumentsProvider : ArgumentsProvider, AnnotationConsumer<BoardTest> 
     }
 
     override fun accept(t: BoardTest) {
-        val board = Board(t.size)
-
-        t.value.forEach {
-            val boardContent = it.split(t.delimiter)
-            board.putStone(Scala(boardContent[0].toInt(), boardContent[1].toInt()), Stone.from(boardContent[2]))
-        }
-        this.board = board
+        this.board = BoardUtils.createBoard(t)
     }
 }

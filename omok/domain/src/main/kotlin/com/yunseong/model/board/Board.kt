@@ -43,19 +43,6 @@ data class Board(
         stones[pos] = stone
     }
 
-    fun printBoard() {
-        for (y in 0 until size) {
-            print("-")
-            println("-".repeat(size * 4))
-            for (x in 0 until size) {
-                print("| ${stones[(y * size) + x]} ")
-            }
-            println("|")
-        }
-        print("-")
-        println("-".repeat(size * 4))
-    }
-
     fun clear() {
         stones.fill(Stone.Empty)
     }

@@ -1,6 +1,7 @@
 package com.yunseong.model.scan
 
 import com.yunseong.model.board.Board
+import com.yunseong.model.board.printer.SimplePrinter
 import com.yunseong.model.common.provider.BoardTest
 import com.yunseong.model.position.Direction
 import com.yunseong.model.position.Scala
@@ -23,7 +24,9 @@ class BoardScannerTest {
         val putStone = Stone.Black
         val putPosition = Scala(3, 5)
 
-        board.printBoard()
+        val printer = SimplePrinter()
+
+        printer.print(board)
 
         // when
         val scan: ScanContainer = scanner.scan(putStone, putPosition)
